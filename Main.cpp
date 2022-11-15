@@ -214,6 +214,58 @@ void shopping::edit()
             {
                 cout << "\n\t\t Product new code :";
                 cin >> c;
+                cout << "\n\t\t Name of the Product :";
+                cin >> n;
+                cout << "\n\t\t Price :";
+                cin >> p;
+                cout << "\n\t\t Discount :";
+                cin >> d;
+                data1 << " " << c << " " << n << " " << d << "\n";
+            }
+            else
+            {
+                data1 << " " << product_code << " " << price << " " << dis;
+            }
+            data >> product_code >> pname >> price >> dis;
+        }
+        data.close();
+        data1.close();
+        remove("database.txt");
+        rename("dtabase1.txt", "databse.txt");
+        if (token == 0)
+        {
+            "Record Not Found";
+        }
+    }
+}
+
+void shopping::rem()
+{
+    fstream data, data1;
+    int pkey;
+    int token = 0;
+    cout << "\n\n\t   Delete Product";
+    cout << "\n\n\t   Product Code";
+    cin >> pkey;
+    data.open("databse.txt", ios::in);
+    if (!data)
+    {
+        cout << "File doesn't exist";
+    }
+    else
+    {
+        data1.open("database1.txt", ios::app | ios;; out);
+        data >> product_code >> pname >> price >> dis;
+        while (!data.eof())
+        {
+            if (product_code == pkey)
+            {
+                cout << "\n\n\t Product deleted Succesfully";
+                token++;
+            }
+            else
+            {
+                data1 << " " << pcode << " " product_name << " " << price << " " << dis << "\n";
             }
         }
     }
