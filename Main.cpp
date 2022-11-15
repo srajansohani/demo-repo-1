@@ -284,7 +284,7 @@ void shopping ::list()
 {
     fstream data;
     data.open("dabase.txt", ios::int);
-    cout << "\n\n______________________________________\n";
+    cout << "\n\n_____________________________________\n";
     cout << "ProN\t\tName\t\tPrice\n";
     cout << "\n\n" data >> product_code >> product_name >> price >> dis;
     while (data.eof())
@@ -293,4 +293,76 @@ void shopping ::list()
         data >> product_code >> product_name >> price >> dis;
     }
     data.close()
+}
+
+void shopping ::reciept()
+{
+    fstream data;
+
+    int arrC[100];
+    int arrQ[100];
+    char choice;
+    int c = 0;
+    float amount = 0;
+    float dis = 0;
+    float total = 0;
+    cout << "\n\n\t\t\t  RECIEPT";
+    data.open("database.txt", ios::in);
+    if (!data)
+    {
+        cout << "\n\n Empty databas e"
+    }
+    else
+    {
+        data.close();
+        list();
+        cout << "\n______________________________\n\n";
+        cout << "\n                                \n";
+        cout << "       Please Place The Order      \n";
+        cout << "|                                   | ";
+        cout << "\n___________________________________\n";
+        do
+        {
+            cout << "\n\n Enter the Proudct code:";
+            cin >> arrC[c];
+            cout << "\n\n Enter the product quantity";
+            cin >> arrQ[c];
+            for (int i = 0; i < c; i++)
+            {
+                if (arrC[i] == arrC[c])
+                {
+                    cout << "\n\n Duplicate product code. Please try again." << endl;
+                    goto m:
+                }
+            }
+            c++;
+            cout << "\n\n Do you want to buy another product ? if yes y else no n";
+            cin >> choice;
+            if (choice == 'y')
+            {
+                cout << "\n\n\t\t\t_______________RECIEPT_____________\n";
+                cout << "\nProduct No\t Product Name\t Product Quantity\tprice\tAmount\tAmount with discount\n";
+                for (int i = 0; i < c; i++)
+                {
+                    data.open("database.txt", ios::in);
+                    data >> product_code >> product_name >> price >> dis;
+                    while (!data.eof())
+                    {
+                        if (product_code == arrC[i])
+                        {
+                            amount = price * arrQ[i];
+                            dis = amount - (amount * dis / 100);
+                            total = total + dis;
+                            cout << "\n"
+                                 << product_code << "\t\t" << product_name << "\t\t" << arrQ[i] << "\t\t" << price << "\t" << amount << "\t\t" << dis;
+                        }
+                        data >> product_code >> product_name >> price >> dis;
+                    }
+                }
+            }
+            data.close();
+        }
+        cout << "\n\n______________________________________";
+        cout << "\n Total Amount : " << total;
+    }
 }
