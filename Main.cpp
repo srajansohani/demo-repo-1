@@ -267,6 +267,30 @@ void shopping::rem()
             {
                 data1 << " " << pcode << " " product_name << " " << price << " " << dis << "\n";
             }
+            data >> product_code >> pname >> price >> dis;
+        }
+        data.close();
+        data1.close();
+        remove("database.txt");
+        rename("database1.txt", "database.txt");
+        if (token == 0)
+        {
+            cout << "\n\n Record not found";
         }
     }
+}
+
+void shopping ::list()
+{
+    fstream data;
+    data.open("dabase.txt", ios::int);
+    cout << "\n\n______________________________________\n";
+    cout << "ProN\t\tName\t\tPrice\n";
+    cout << "\n\n" data >> product_code >> product_name >> price >> dis;
+    while (data.eof())
+    {
+        cout << product_code << "\t\t" << product_name << "\t" << price << "\n";
+        data >> product_code >> product_name >> price >> dis;
+    }
+    data.close()
 }
