@@ -216,7 +216,7 @@ void shopping::edit()
     }
     else
     {
-        data1.open("database.txt", ios::app | ios::out);
+        data1.open("database1.txt", ios::app | ios::out);
         data >> product_code >> product_name >> price >> dis;
         while (!data1.eof())
         {
