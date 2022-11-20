@@ -98,7 +98,7 @@ m:
     cout << "\n\t\t\t\t|______3.) Delete the product_____|";
     cout << "\n\t\t\t\t|                                 |";
     cout << "\n\t\t\t\t|______4.) Back to main menu______|";
-    cout << "\n\n\t  Please enter your choice of product_____|";
+    cout << "\n\n\t  Please enter your choice : ";
     int choice = 0;
     cin >> choice;
     // depending on choice from above different methods are called
@@ -131,7 +131,7 @@ m:
     cout << "\n\t\t\t\t                                                   |";
     cout << "\n\t\t\t\t___________________________________________________|";
     cout << "\n\t\t\t\t                                                   |";
-    cout << "\n\t\t\t\t|______1.) Buy Product         |";
+    cout << "\n\t\t\t\t|______1.) Buy Product_________|";
     cout << "\n\t\t\t\t|                              |";
     cout << "\n\t\t\t\t|______2.) Go Back ____________|";
     cout << "\n\t\t\t\t                           ";
@@ -165,13 +165,13 @@ m:
     float discount_to_check;
     string name_to_check;
     cout << "\n\n\t\t\t Add new product";
-    cout << "\n\n\t Product code of product";
+    cout << "\n\n\t Product code of product: ";
     cin >> product_code;
-    cout << "\n\n\t Product Name of product";
+    cout << "\n\n\t Product Name of product: ";
     cin >> product_name;
-    cout << "\n\n\t Price of the Product";
+    cout << "\n\n\t Price of the Product: ";
     cin >> price;
-    cout << "\n\n\t Discount on product";
+    cout << "\n\n\t Discount on product: ";
     cin >> discount;
 
     data.open("database.txt", ios::in);
@@ -311,6 +311,7 @@ void shopping ::list() // It displays the lsit of availaible products
 {
     fstream data;
     data.open("database.txt", ios::in);
+    cout << "\t\t PRODUCT LIST\n";
     cout << "\n\n_______________________________________________\n";
     cout << "Product code\t\tName\t\tPrice\n";
     cout << "\n\n________________________________________________ \n";
@@ -334,7 +335,6 @@ void shopping ::reciept() // It displays the complete shopping menu where you ha
     float amount = 0;
     float final_price = 0;
     float total = 0;
-    cout << "\n\n\t\t\t  RECIEPT";
     data.open("database.txt", ios::in);
     if (!data)
     {
@@ -365,11 +365,11 @@ void shopping ::reciept() // It displays the complete shopping menu where you ha
                 }
             }
             current_index++;
-            cout << "\n\n Do you want to buy another product ? if yes y else no n";
+            cout << "\n\n Do you want to buy another product ? if yes y else no n : ";
             cin >> choice;
         } while (choice == 'y');
 
-        cout << "\n\n\t\t\t_______________Product List_____________\n";
+        cout << "\n\n\t\t\t_______________RECIEPT_____________\n";
         cout << "\nProduct No\t Product Name\t Product Quantity\tprice\tAmount\t discount\t Final price\n";
         for (int i = 0; i < current_index; i++)
         {
