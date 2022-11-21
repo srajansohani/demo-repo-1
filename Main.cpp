@@ -338,7 +338,7 @@ void shopping ::reciept() // It displays the complete shopping menu where you ha
     data.open("database.txt", ios::in);
     if (!data)
     {
-        cout << "\n\n Empty database";
+        cout << "\n\n Nothing in Store ";
     }
     else
     {
@@ -352,7 +352,8 @@ void shopping ::reciept() // It displays the complete shopping menu where you ha
         do
         {
         m:
-            cout << "\n\n Enter the Proudct code:";
+
+            cout << "\n\n Enter the Proudct code: ";
             cin >> arrC[current_index];
             cout << "\n\n Enter the product quantity: ";
             cin >> arrQ[current_index];
@@ -387,8 +388,8 @@ void shopping ::reciept() // It displays the complete shopping menu where you ha
                 }
                 data >> product_code >> product_name >> price >> discount;
             }
+            data.close();
         }
-        data.close();
     }
     cout << "\n\n______________________________________";
     cout << "\n Total Amount : " << total;
