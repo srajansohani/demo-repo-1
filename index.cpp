@@ -14,13 +14,7 @@ int main()
 
     vector<ll> nums = [1,4,1,2,6];
 
-    for (int i=0 ; i<nums.size(); i++){
-      for (int j=i+1 ; j<nums.size(); j++){
-        if (nums[i) < nums[j]){
-          swap(nums[i], nums[j]);
-        }
-      }
-    }
+    sort(v.begin(),v.end());
 
     for (auto i:nums){
       cout << i << " ";
