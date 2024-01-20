@@ -1,4 +1,4 @@
-on: [push]
+on: [push,pull_request]
 
 jobs:
   hello_world_job:
@@ -6,7 +6,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: Hello World By Srajan
-        uses: srajansohani/demo-practise-githubAction@v1.3
+        uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
         with:
           who-to-greet: 'Srajan'
       # Use the output from the `hello` step
