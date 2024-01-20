@@ -14,8 +14,12 @@ int main()
 
     vector<ll> nums = [1,4,1,2,6];
 
-    sort(v.begin(),v.end());
+    sort(v.rbegin(),v.rend());
 
+    reverse(v.begin(),v.end());
+
+    cout<<"Hello World\n";
+    
     for (auto i:nums){
       cout << i << " ";
     }
