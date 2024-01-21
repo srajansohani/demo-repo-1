@@ -14,9 +14,13 @@ int main()
 
     vector<ll> nums = [1,4,1,2,6];
 
-    sort(v.rbegin(),v.rend());
-
-    reverse(v.begin(),v.end());
+   for (int i=0 ; i<nums.size(); i++){
+      for (int j=i+1 ; j<nums.size(); j++){
+        if (nums[i) < nums[j]){
+          swap(nums[i], nums[j]);
+        }
+      }
+    }
 
     cout<<"Hello World\n";
     
