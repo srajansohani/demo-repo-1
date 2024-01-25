@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Commit Blog Generator
         id: hello
-        uses: srajansohani/commit-blog-generator@v0.25
+        uses: srajansohani/commit-blog-generator@v0.1
         with:
           blog-domain: 'srajan12.hashnode.dev'
         env: 
