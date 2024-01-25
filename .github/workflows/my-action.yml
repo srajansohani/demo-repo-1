@@ -10,6 +10,7 @@ jobs:
         uses: srajansohani/commit-blog-generator@v0.1
         with:
           blog-domain: 'srajan12.hashnode.dev'
+          series-slug: 'demo-repo-1'
         env: 
           HASHNODE_ACCESS_TOKEN: ${{ secrets.HASHNODE_ACCESS_TOKEN }}
           GITHUB_ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN }}
