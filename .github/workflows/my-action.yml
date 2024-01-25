@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Commit Blog Generator
         id: hello
-        uses: srajansohani/commit-blog-generator@v0.9 
+        uses: srajansohani/commit-blog-generator@v0.10 
         with:
           blog-domain: 'srajan12.hashnode.dev'
           series-slug: 'demo-repo-1'
